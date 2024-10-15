@@ -3,10 +3,6 @@ from .views import *
 
 
 urlpatterns = [
-    path('register/', RegisterView.as_view(), name='register'),
-    path('login/', CustomLoginView.as_view(), name='register'),
-    path('logout/', LogoutView.as_view(), name='logout'),
-
     path('', ProductListViewSet.as_view({'get': 'list',
                                          'post': 'create'}), name='product_list'),
     path('<int:pk>/', ProductDetailViewSet.as_view({'get': 'retrieve',
@@ -43,11 +39,9 @@ urlpatterns = [
                                                   'post': 'create'}), name='productphotos_list'),
     path('photos/<int:pk>/', ProductPhotosViewSet.as_view({'get': 'retrieve',
                                                            'put': 'update',
-                                                           'delete': 'destroy'}), name='productphotos_detail'),
-    path('cart/', CartViewSet.as_view({'get': 'retrieve'}), name='cart_detail'),
-    path('cart_items/', CarItemViewSet.as_view({'get': 'list', 'post': 'create'}), name='car_item_list'),
-    path('cart_items/<int:pk>/', CarItemViewSet.as_view({'put': 'update', 'delete': 'destroy'}))
+                                                           'delete': 'destroy'}), name='productphotos_detail')
 ]
 
 
 
+===

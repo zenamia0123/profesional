@@ -48,6 +48,7 @@ class LoginSerializer(serializers.Serializer):
             'refresh': str(refresh),
         }
 
+
 class UserProfileSerializers(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
